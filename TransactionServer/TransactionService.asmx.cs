@@ -74,14 +74,8 @@ namespace TransactionServer
             con.Open();
             adapter = new SQLiteDataAdapter("SELECT * FROM transactions", con);
 
-            // TODO: Handle empty table scenario
             adapter.Fill(datatable);
 
-            //datatable.WriteXml("transactions.xml");
-
-            //var xmlString = ConvertDatatableToXML(datatable);
-
-            //return xmlString;
             return datatable;
         }
 

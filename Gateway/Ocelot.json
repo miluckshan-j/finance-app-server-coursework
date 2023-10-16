@@ -1,5 +1,5 @@
 {
-
+    "https": null, //localhost:/.asmx
     "ReRoutes": [
         {
             "DownstreamPathTemplate": "/UserManagementService.asmx",
@@ -23,6 +23,19 @@
                 }
             ],
             "UpstreamPathTemplate": "/service/Transaction",
+            "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ]
+        },
+
+        {
+            "DownstreamPathTemplate": "/PredictionService.asmx",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 44302
+                }
+            ],
+            "UpstreamPathTemplate": "/service/Prediction",
             "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ]
         }
     ]
